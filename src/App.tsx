@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
+  const headers = [
+    {
+      id: "head1",
+      name: "Header1",
+      description: "This is the header number 1",
+    },
+    {
+      id: "head2",
+      name: "Header2",
+      description: "This is the header number 2",
+    },
+    {
+      id: "head3",
+      name: "Header3",
+      description: "This is the header number 3",
+    },
+    {
+      id: "head4",
+      name: "Header4",
+      description: "This is the header number 4",
+    },
+    {
+      id: "head5",
+      name: "Header5",
+      description: "This is the header number 5",
+    },
+  ];
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+    <div className="1">
+      {headers.map((header) => {
+        return (
+          <div key={header.id} className="2">
+            <h2>{header.name}</h2>
+            <p>{header.description}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
